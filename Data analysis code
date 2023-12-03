@@ -16,3 +16,7 @@ df = pd.read_csv(file_path)
 
 # showing the first few rows of the dataset
 print(df.head())
+# a) Identifying categorical,discrete and continuous variable types, missing values and visualizing them
+# identifying variable types
+print("\nVARIABLE TYPES:")
+print(df.info())
