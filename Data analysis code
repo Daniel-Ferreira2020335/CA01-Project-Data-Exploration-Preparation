@@ -65,3 +65,11 @@ plt.title('Boxplot of AVAILABLE_BIKES')
 plt.subplot(2, 3, 4)
 sns.scatterplot(x='LATITUDE', y='LONGITUDE', data=df)
 plt.title('Scatter plot of LATITUDE vs LONGITUDE')
+
+# distribution plot for LATITUDE
+plt.subplot(2, 3, 5)
+sns.histplot(df['LATITUDE'], bins=20, kde=True)
+plt.title('Distribution of LATITUDE')
+
+plt.tight_layout()
+plt.show()
