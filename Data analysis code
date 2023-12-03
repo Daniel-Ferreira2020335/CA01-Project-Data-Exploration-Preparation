@@ -159,6 +159,23 @@ plt.show()
 # f) applying dummy encoding to categorical variable 'STATUS'
 df_encoded = pd.get_dummies(df, columns=['STATUS'], drop_first=True)
 
+
+# g) Apply PCA with components
+# select the numerical features for PCA
+X = df[numerical_columns]
+
+# number of components
+n_components = 2
+
+# applying PCA
+pca = PCA(n_components=n_components)
+pca_result = pca.fit_transform(X)
+
+# creating a dataframe for the PCA results
+pca_df = pd.DataFrame(data=pca_result, columns=[f'PC{i}' for i in range(1, n_components + 1)])
+
+# display the first few rows of the PCA dataframe
+print(pca_df.head())
 # showing the first few rows of the encoded DataFrame
 print(df_encoded.head())
 
