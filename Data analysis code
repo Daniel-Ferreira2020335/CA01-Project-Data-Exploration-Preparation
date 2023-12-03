@@ -156,4 +156,11 @@ sns.countplot(x='STATUS', data=df)
 plt.title('Count of each STATUS category')
 plt.show()
 
+# f) applying dummy encoding to categorical variable 'STATUS'
+df_encoded = pd.get_dummies(df, columns=['STATUS'], drop_first=True)
+
+# showing the first few rows of the encoded DataFrame
+print(df_encoded.head())
+
+
 
