@@ -124,3 +124,36 @@ sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f")
 plt.title('Correlation Heatmap')
 plt.show()
 
+# e) Graphics and descriptive understanding with EDA
+# subgroups of features for exploration
+# exploring the distribution of STATUS within each BIKE_STANDS subgroup
+plt.figure(figsize=(12, 6))
+sns.boxplot(x='STATUS', y='BIKE_STANDS', data=df)
+plt.title('Distribution of BIKE_STANDS across STATUS')
+plt.show()
+
+# exploring the relationship between AVAILABLE_BIKES and AVAILABLE_BIKE_STANDS with STATUS as hue
+plt.figure(figsize=(12, 6))
+sns.scatterplot(x='AVAILABLE_BIKE_STANDS', y='AVAILABLE_BIKES', hue='STATUS', data=df)
+plt.title('Relationship between AVAILABLE_BIKES and AVAILABLE_BIKE_STANDS with STATUS')
+plt.show()
+
+# exploring the distribution of AVAILABLE_BIKES across different STATUS categories
+plt.figure(figsize=(12, 6))
+sns.boxplot(x='STATUS', y='AVAILABLE_BIKES', data=df)
+plt.title('Distribution of AVAILABLE_BIKES across STATUS')
+plt.show()
+
+# exploring the correlation between LATITUDE, LONGITUDE with BIKE_STANDS as size
+plt.figure(figsize=(12, 6))
+sns.scatterplot(x='LATITUDE', y='LONGITUDE', size='BIKE_STANDS', data=df)
+plt.title('Correlation between LATITUDE, LONGITUDE with BIKE_STANDS as size')
+plt.show()
+
+# exploring the count of each STATUS category
+plt.figure(figsize=(8, 6))
+sns.countplot(x='STATUS', data=df)
+plt.title('Count of each STATUS category')
+plt.show()
+
+
