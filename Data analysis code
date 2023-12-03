@@ -35,3 +35,10 @@ plt.pie(status_counts, labels=status_counts.index, autopct='%1.1f%%', startangle
 plt.axis('equal')
 plt.title('Distribution of STATUS')
 plt.show()
+# discrete variable visualization
+print("\nVISUALIZING DESCRETE VARIABLES:")
+plt.figure(figsize=(20, 10))
+sns.countplot(x='STATION ID', data=df)
+plt.xticks(rotation=90)
+plt.title('Distribution of STATION ID')
+plt.show()
