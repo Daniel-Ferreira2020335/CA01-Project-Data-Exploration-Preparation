@@ -77,3 +77,31 @@ plt.show()
 # b) calculating statistical parameters
 statistical_summary = df.describe()
 print(statistical_summary)
+
+
+# c) Normalization, Standardization, and Robust Scaling
+numerical_columns = df.select_dtypes(include=['int64', 'float64']).columns
+min_max_scaler = MinMaxScaler()
+z_score_scaler = StandardScaler()
+robust_scaler = RobustScaler()
+
+# Applying transformations and concatenating all columns at once
+df_minmax = pd.DataFrame(min_max_scaler.fit_transform(df[numerical_columns]), columns=numerical_columns + '_minmax')
+df_zscore = pd.DataFrame(z_score_scaler.fit_transform(df[numerical_columns]), columns=numerical_columns + '_zscore')
+df_robust = pd.DataFrame(robust_scaler.fit_transform(df[numerical_columns]), columns=numerical_columns + '_robust')
+
+# Concatenate the new DataFrames
+df = pd.concat([df, df_minmax, df_zscore, df_robust], axis=1)
+
+# Print statements for each scaler
+print("Min-Max Normalization:")
+print(df[numerical_columns + '_minmax'])
+
+print("\nZ-score Standardization:")
+print(df[numerical_columns + '_zscore'])
+
+print("\nRobust Scaling:")
+print(df[numerical_columns + '_robust'])
+
+
+
