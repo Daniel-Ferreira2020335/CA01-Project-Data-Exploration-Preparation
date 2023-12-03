@@ -9,3 +9,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import MinMaxScaler, StandardScaler, RobustScaler
 from sklearn.decomposition import PCA
+
+# loading the dataset
+file_path = 'dublinbike-historical-data-2022-03.csv'
+df = pd.read_csv(file_path)
+
+# showing the first few rows of the dataset
+print(df.head())
