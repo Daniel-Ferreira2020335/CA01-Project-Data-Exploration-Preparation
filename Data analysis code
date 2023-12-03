@@ -103,5 +103,24 @@ print(df[numerical_columns + '_zscore'])
 print("\nRobust Scaling:")
 print(df[numerical_columns + '_robust'])
 
+# d) Visualizing correlation with Line, Scatter, and Heatmap
+plt.figure(figsize=(12, 6))
 
+# line plot for correlation between BIKE_STANDS and AVAILABLE_BIKES
+plt.subplot(1, 3, 1)
+sns.lineplot(x='BIKE_STANDS', y='AVAILABLE_BIKES', data=df)
+plt.title('Line Plot \nBIKE_STANDS against AVAILABLE_BIKES')
+
+# scatter plot for LATITUDE and LONGITUDE
+plt.subplot(1, 3, 2)
+sns.scatterplot(x='LATITUDE', y='LONGITUDE', data=df)
+plt.title('Scatter Plot \nLATITUDE against LONGITUDE')
+plt.tight_layout()
+
+# heatmap for the correlation matrix
+plt.figure(figsize=(20, 10))
+correlation_matrix = df.corr(numeric_only=True)
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f")
+plt.title('Correlation Heatmap')
+plt.show()
 
