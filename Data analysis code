@@ -56,3 +56,8 @@ plt.title('Boxplot of BIKE_STANDS')
 plt.subplot(2, 3, 2)
 sns.boxplot(y='AVAILABLE_BIKE_STANDS', data=df)
 plt.title('Boxplot of AVAILABLE_BIKE_STANDS')
+
+# boxplot for AVAILABLE_BIKES
+plt.subplot(2, 3, 3)
+sns.boxplot(y='AVAILABLE_BIKES', data=df)
+plt.title('Boxplot of AVAILABLE_BIKES')
