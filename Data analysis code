@@ -42,3 +42,17 @@ sns.countplot(x='STATION ID', data=df)
 plt.xticks(rotation=90)
 plt.title('Distribution of STATION ID')
 plt.show()
+
+# continuous variable visualizations
+print("\nVISUALIZING CONTINUOUS VARIABLES:")
+plt.figure(figsize=(16, 10))
+
+# boxplot for BIKE_STANDS
+plt.subplot(2, 3, 1)
+sns.boxplot(y='BIKE_STANDS', data=df)
+plt.title('Boxplot of BIKE_STANDS')
+
+# boxplot for AVAILABLE_BIKE_STANDS
+plt.subplot(2, 3, 2)
+sns.boxplot(y='AVAILABLE_BIKE_STANDS', data=df)
+plt.title('Boxplot of AVAILABLE_BIKE_STANDS')
