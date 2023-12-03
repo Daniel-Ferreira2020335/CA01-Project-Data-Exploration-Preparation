@@ -61,3 +61,7 @@ plt.title('Boxplot of AVAILABLE_BIKE_STANDS')
 plt.subplot(2, 3, 3)
 sns.boxplot(y='AVAILABLE_BIKES', data=df)
 plt.title('Boxplot of AVAILABLE_BIKES')
+# scatter plot for LATITUDE and LONGITUDE
+plt.subplot(2, 3, 4)
+sns.scatterplot(x='LATITUDE', y='LONGITUDE', data=df)
+plt.title('Scatter plot of LATITUDE vs LONGITUDE')
