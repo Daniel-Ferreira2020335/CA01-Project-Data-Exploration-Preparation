@@ -73,3 +73,7 @@ plt.title('Distribution of LATITUDE')
 
 plt.tight_layout()
 plt.show()
+
+# b) calculating statistical parameters
+statistical_summary = df.describe()
+print(statistical_summary)
