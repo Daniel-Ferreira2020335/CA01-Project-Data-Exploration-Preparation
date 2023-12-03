@@ -20,3 +20,18 @@ print(df.head())
 # identifying variable types
 print("\nVARIABLE TYPES:")
 print(df.info())
+categorical_vars = ['STATUS']
+discrete_vars = ['STATION_ID']
+continuous_vars = ['BIKE_STANDS', 'AVAILABLE_BIKE_STANDS', 'AVAILABLE_BIKES', 'LATITUDE', 'LONGITUDE']
+
+# checking for missing values in the dataset
+print("\nMISSING VALUES:")
+print(df.isnull().sum())
+
+# visualizing the Categorial variables pie chart
+print("\nVISUALIZING CATEGORICAL VARIABLES:")
+status_counts = df[categorical_vars].value_counts()
+plt.pie(status_counts, labels=status_counts.index, autopct='%1.1f%%', startangle=45)
+plt.axis('equal')
+plt.title('Distribution of STATUS')
+plt.show()
